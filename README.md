@@ -54,3 +54,34 @@ GET /article/{article_UID}: Returns a single article by its ID.
 POST /article/{article_UID}: Creates a new article with the specified ID.
 DELETE /article/{article_id}: Deletes an article by its ID.
 PUT /article/{article_id}: Updates an article by its ID.
+
+Examples
+Using Postman
+POST /article/{article_UID}
+URL: http://127.0.0.1:8000/article/100
+Method: POST
+Body:
+{
+    "author": "New Author",
+    "title": "New Title",
+    "publication_date": "2024-05-21",
+    "url": "http://new-url.com",
+    "images": ["http://image1.com", "http://image2.com"],
+    "body": ["Paragraph 1", "Paragraph 2"]
+}
+PUT /article/{article_UID}
+URL: http://127.0.0.1:8000/article/100
+Method: PUT
+Body:
+{
+    "author": "Updated Author",
+    "title": "Updated Title",
+    "publication_date": "2024-05-21",
+    "url": "http://updated-url.com",
+    "images": ["http://image1.com", "http://image2.com"],
+    "body": ["Updated paragraph 1", "Updated paragraph 2"]
+}
+Notes
+Ensure that the database is correctly set up and running before starting the API.
+If you encounter any issues, check the logs and verify the database connection settings.
+The provided examples assume the use of SQLite. For other databases, ensure the necessary drivers and configurations are set.
